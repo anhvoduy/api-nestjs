@@ -1,2 +1,2 @@
-# ndemo
-ndemo-mssql-db
+# ndemo db
+Microsoft SQL Server DB

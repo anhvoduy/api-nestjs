@@ -141,6 +141,14 @@ BEGIN
 END
 GO
 
+IF (EXISTS (SELECT * 
+			FROM INFORMATION_SCHEMA.TABLES 
+			WHERE TABLE_CATALOG='ndemo' AND TABLE_SCHEMA = 'dbo' AND  TABLE_NAME = 'UserGroup'))
+BEGIN
+	DROP TABLE [dbo].[UserGroup]
+END
+GO
+
 BEGIN
 	CREATE TABLE [dbo].[GroupUser](
 		[GroupUserId] [int] IDENTITY(1,1) NOT NULL,
@@ -157,20 +165,20 @@ BEGIN
 		[Editor] [nvarchar](50) NULL
 	CONSTRAINT [PK_UserGroup] PRIMARY KEY CLUSTERED 
 	(
-		[UserGroupId] ASC
+		[GroupUserId] ASC
 	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 	) ON [PRIMARY]
 END
 GO
 
 -- Sample data: GroupId = ModuleId
-INSERT INTO [dbo].[UserGroup] (GroupId, UserId, ModuleId, Author, Editor) VALUES (1,1,0,'SYSTEM','SYSTEM');
-INSERT INTO [dbo].[UserGroup] (GroupId, UserId, ModuleId, Author, Editor) VALUES (1,2,0,'SYSTEM','SYSTEM');
-INSERT INTO [dbo].[UserGroup] (GroupId, UserId, ModuleId, Author, Editor) VALUES (1,3,0,'SYSTEM','SYSTEM');
-INSERT INTO [dbo].[UserGroup] (GroupId, UserId, ModuleId, Author, Editor) VALUES (1,4,0,'SYSTEM','SYSTEM');
-INSERT INTO [dbo].[UserGroup] (GroupId, UserId, ModuleId, Author, Editor) VALUES (1,5,0,'SYSTEM','SYSTEM');
-INSERT INTO [dbo].[UserGroup] (GroupId, UserId, ModuleId, Author, Editor) VALUES (2,1,0,'SYSTEM','SYSTEM');
-INSERT INTO [dbo].[UserGroup] (GroupId, UserId, ModuleId, Author, Editor) VALUES (2,2,0,'SYSTEM','SYSTEM');
-INSERT INTO [dbo].[UserGroup] (GroupId, UserId, ModuleId, Author, Editor) VALUES (2,3,0,'SYSTEM','SYSTEM');
-INSERT INTO [dbo].[UserGroup] (GroupId, UserId, ModuleId, Author, Editor) VALUES (2,4,0,'SYSTEM','SYSTEM');
-INSERT INTO [dbo].[UserGroup] (GroupId, UserId, ModuleId, Author, Editor) VALUES (2,5,0,'SYSTEM','SYSTEM');
+INSERT INTO [dbo].[GroupUser] (GroupId, UserId, ModuleId, Author, Editor) VALUES (1,1,0,'SYSTEM','SYSTEM');
+INSERT INTO [dbo].[GroupUser] (GroupId, UserId, ModuleId, Author, Editor) VALUES (1,2,0,'SYSTEM','SYSTEM');
+INSERT INTO [dbo].[GroupUser] (GroupId, UserId, ModuleId, Author, Editor) VALUES (1,3,0,'SYSTEM','SYSTEM');
+INSERT INTO [dbo].[GroupUser] (GroupId, UserId, ModuleId, Author, Editor) VALUES (1,4,0,'SYSTEM','SYSTEM');
+INSERT INTO [dbo].[GroupUser] (GroupId, UserId, ModuleId, Author, Editor) VALUES (1,5,0,'SYSTEM','SYSTEM');
+INSERT INTO [dbo].[GroupUser] (GroupId, UserId, ModuleId, Author, Editor) VALUES (2,1,0,'SYSTEM','SYSTEM');
+INSERT INTO [dbo].[GroupUser] (GroupId, UserId, ModuleId, Author, Editor) VALUES (2,2,0,'SYSTEM','SYSTEM');
+INSERT INTO [dbo].[GroupUser] (GroupId, UserId, ModuleId, Author, Editor) VALUES (2,3,0,'SYSTEM','SYSTEM');
+INSERT INTO [dbo].[GroupUser] (GroupId, UserId, ModuleId, Author, Editor) VALUES (2,4,0,'SYSTEM','SYSTEM');
+INSERT INTO [dbo].[GroupUser] (GroupId, UserId, ModuleId, Author, Editor) VALUES (2,5,0,'SYSTEM','SYSTEM');

@@ -24,8 +24,10 @@ BEGIN
 		[UserKey] [nvarchar](50) NOT NULL,	
 		[UserType] [nvarchar](20) DEFAULT NULL,
 		[UserName] [nvarchar](50) DEFAULT NULL,
-		[Hash] [nvarchar](50) DEFAULT NULL,	
-		[DisplayName] [nvarchar](50) DEFAULT NULL,
+		[Hash] [nvarchar](50) DEFAULT NULL,
+		[FirstName] [nvarchar](50) DEFAULT NULL,
+		[LastName] [nvarchar](50) DEFAULT NULL,
+		[DisplayName] [nvarchar](100) DEFAULT NULL,
 		[ImageKey] [nvarchar](250) DEFAULT NULL,
 		[Email] [nvarchar](50) DEFAULT NULL,
 		[Mobile] [nvarchar](50) DEFAULT NULL,	
@@ -46,41 +48,41 @@ END
 GO
 
 -- Sample data
-INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, DisplayName, Email, DateOfBirth, Author, Editor) 
-VALUES (NEWID(),'USER', 'user01',NEWID(),'Test User 01','user01@demo.com','1990-03-03','SYSTEM','SYSTEM');
+INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName, DisplayName, Email, DateOfBirth, Author, Editor) 
+VALUES (NEWID(),'MEMBER', 'user01',NEWID(),'F1','Mike','Test User 01','user01@demo.com','1990-03-03','SYSTEM','SYSTEM');
 
-INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, DisplayName, Email, DateOfBirth, Author, Editor) 
-VALUES (NEWID(),'USER', 'user02',NEWID(),'Test User 02','user02@demo.com','1990-04-04','SYSTEM','SYSTEM');
+INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName, DisplayName, Email, DateOfBirth, Author, Editor) 
+VALUES (NEWID(),'MEMBER', 'user02',NEWID(),'F2','Mike','Test User 02','user02@demo.com','1990-04-04','SYSTEM','SYSTEM');
 
-INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, DisplayName, Email, DateOfBirth, Author, Editor) 
-VALUES (NEWID(),'USER', 'user03', NEWID(),'Test User 03','user03@demo.com','1984-12-24','SYSTEM','SYSTEM');
+INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName, DisplayName, Email, DateOfBirth, Author, Editor) 
+VALUES (NEWID(),'MEMBER', 'user03', NEWID(),'F3','Mike','Test User 03','user03@demo.com','1984-12-24','SYSTEM','SYSTEM');
 
-INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, DisplayName, Email, DateOfBirth, Author, Editor) 
-VALUES (NEWID(),'ADMIN','user04',  NEWID(),'Test User 04','user04@demo.com','2000-12-26','SYSTEM','SYSTEM');
+INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName, DisplayName, Email, DateOfBirth, Author, Editor) 
+VALUES (NEWID(),'MEMBER','user04',  NEWID(),'F3','Mike','Test User 04','user04@demo.com','2000-12-26','SYSTEM','SYSTEM');
 
-INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, DisplayName, Email, DateOfBirth, Author, Editor) 
-VALUES (NEWID(),'USER', 'user05',   NEWID(),'Test User 05','user05@demo.com','1984-12-22','SYSTEM','SYSTEM');
+INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName, DisplayName, Email, DateOfBirth, Author, Editor) 
+VALUES (NEWID(),'MEMBER', 'user05',   NEWID(),'F4','Mike','Test User 05','user05@demo.com','1984-12-22','SYSTEM','SYSTEM');
 
-INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, DisplayName, Email, DateOfBirth, Author, Editor) 
-VALUES (NEWID(),'USER', 'user06', NEWID(),'Test User 05','user06@demo.com','1984-12-24','SYSTEM','SYSTEM');
+INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName, DisplayName, Email, DateOfBirth, Author, Editor) 
+VALUES (NEWID(),'MEMBER', 'user06', NEWID(),'F5','Mike','Test User 05','user06@demo.com','1984-12-24','SYSTEM','SYSTEM');
 
-INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, DisplayName, Email, DateOfBirth, Author, Editor) 
-VALUES (NEWID(),'USER', 'user07',  NEWID(),'Test User 06','user07@demo.com','1985-06-06','SYSTEM','SYSTEM');
+INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName, DisplayName, Email, DateOfBirth, Author, Editor) 
+VALUES (NEWID(),'MEMBER', 'user07',  NEWID(),'F6','Mike','Test User 06','user07@demo.com','1985-06-06','SYSTEM','SYSTEM');
 
-INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, DisplayName, Email, DateOfBirth, Author, Editor) 
-VALUES (NEWID(),'USER', 'user08', NEWID(),'Test User 07','user08@demo.com','1984-12-24','SYSTEM','SYSTEM');
+INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName, DisplayName, Email, DateOfBirth, Author, Editor) 
+VALUES (NEWID(),'MEMBER', 'user08', NEWID(),'F7','Mike','Test User 07','user08@demo.com','1984-12-24','SYSTEM','SYSTEM');
 
-INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, DisplayName, Email, DateOfBirth, Author, Editor) 
-VALUES (NEWID(),'USER', 'user09', NEWID(),'Test User 08','user09@demo.com','1982-08-08','SYSTEM','SYSTEM');
+INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName, DisplayName, Email, DateOfBirth, Author, Editor) 
+VALUES (NEWID(),'MEMBER', 'user09', NEWID(),'F8','Mike','Test User 08','user09@demo.com','1982-08-08','SYSTEM','SYSTEM');
 
-INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, DisplayName, Email, DateOfBirth, Author, Editor) 
-VALUES (NEWID(),'USER', 'user10',  NEWID(),'Test User 09','user10@demo.com','1985-06-06','SYSTEM','SYSTEM');
+INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName, DisplayName, Email, DateOfBirth, Author, Editor) 
+VALUES (NEWID(),'MEMBER', 'user10',  NEWID(),'F9','Mike','Test User 09','user10@demo.com','1985-06-06','SYSTEM','SYSTEM');
 
-INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, DisplayName, Email, DateOfBirth, Author, Editor) 
-VALUES (NEWID(),'ADMIN', 'admin',  NEWID(),'Test Admmin Acct','admin@demo.com','1987-07-07','SYSTEM','SYSTEM');
+INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName, DisplayName, Email, DateOfBirth, Author, Editor) 
+VALUES (NEWID(),'ADMIN', 'admin01',  NEWID(),'F10','Mike','Admmin 01','admin@demo.com','1987-07-07','SYSTEM','SYSTEM');
 
-INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, DisplayName, Email, DateOfBirth, Author, Editor) 
-VALUES (NEWID(),'ADMIN', 'admin02',  NEWID(),'Test Admmin 02','admin02@demo.com','1987-07-07','SYSTEM','SYSTEM');
+INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName, DisplayName, Email, DateOfBirth, Author, Editor) 
+VALUES (NEWID(),'ADMIN', 'admin02',  NEWID(),'F11','Mike','Admmin 02','admin02@demo.com','1987-07-07','SYSTEM','SYSTEM');
 
 
 --

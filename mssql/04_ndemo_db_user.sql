@@ -20,25 +20,27 @@ GO
 
 BEGIN
 	CREATE TABLE [dbo].[User](
-		[UserId] [int] IDENTITY(1,1) NOT NULL,
-		[UserKey] [nvarchar](50) NOT NULL,	
-		[UserType] [nvarchar](20) DEFAULT NULL,
-		[UserName] [nvarchar](50) DEFAULT NULL,
-		[Hash] [nvarchar](50) DEFAULT NULL,
-		[FirstName] [nvarchar](50) DEFAULT NULL,
-		[LastName] [nvarchar](50) DEFAULT NULL,
-		[DisplayName] [nvarchar](100) DEFAULT NULL,
-		[ImageKey] [nvarchar](250) DEFAULT NULL,
-		[Email] [nvarchar](50) DEFAULT NULL,
-		[Mobile] [nvarchar](50) DEFAULT NULL,	
-		[Title] [nvarchar](50) DEFAULT NULL,
-		[Description] [nvarchar](250) DEFAULT NULL,
-		[DateOfBirth] [datetime] DEFAULT NULL,	
-		[Created] [datetime] DEFAULT CURRENT_TIMESTAMP,
-		[Updated] [datetime] DEFAULT CURRENT_TIMESTAMP,
-		[Author] [nvarchar](50) DEFAULT NULL,
-		[Editor] [nvarchar](50) DEFAULT NULL,
-		[Deleted] [int] DEFAULT 0
+		[UserId] 		INT IDENTITY(1,1) NOT NULL,
+		[UserKey] 		NVARCHAR(50) NOT NULL,	
+		[UserType] 		NVARCHAR(20) DEFAULT NULL,
+		[UserName] 		NVARCHAR(50) DEFAULT NULL,
+		[Hash] 			NVARCHAR(50) DEFAULT NULL,
+		[FirstName] 	NVARCHAR(50) DEFAULT NULL,
+		[LastName] 		NVARCHAR(50) DEFAULT NULL,
+		[DisplayName] 	NVARCHAR(100) DEFAULT NULL,
+		[ImageKey] 		NVARCHAR(250) DEFAULT NULL,
+		[Email] 		NVARCHAR(50) DEFAULT NULL,
+		[CountryCode]	NVARCHAR](5) DEFAULT NULL,
+		[PhoneNumber]	NVARCHAR](5) DEFAULT NULL,
+		[Mobile] 		NVARCHAR(50) DEFAULT NULL,	
+		[Title] 		NVARCHAR(50) DEFAULT NULL,
+		[Description] 	NVARCHAR(250) DEFAULT NULL,
+		[DateOfBirth] 	DATETIME DEFAULT NULL,	
+		[Created] 		DATETIME DEFAULT CURRENT_TIMESTAMP,
+		[Updated] 		DATETIME DEFAULT CURRENT_TIMESTAMP,
+		[Author] 		NVARCHAR(50) DEFAULT NULL,
+		[Editor] 		NVARCHAR(50) DEFAULT NULL,
+		[Deleted] 		INT DEFAULT 0
 	CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
 	(
 		[UserId] ASC
@@ -82,7 +84,7 @@ INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName
 VALUES (NEWID(),'ADMIN', 'admin01',  NEWID(),'F10','Mike','Admmin 01','admin@demo.com','1987-07-07','SYSTEM','SYSTEM');
 
 INSERT INTO [dbo].[User] (UserKey, UserType, UserName, Hash, FirstName, LastName, DisplayName, Email, DateOfBirth, Author, Editor) 
-VALUES (NEWID(),'ADMIN', 'admin02',  NEWID(),'F11','Mike','Admmin 02','admin02@demo.com','1987-07-07','SYSTEM','SYSTEM');
+VALUES (NEWID(),'ADMIN', 'admin02',  NEWID(),'F11','Mike','Admmin 02','admin02@demo.com','1988-08-08','SYSTEM','SYSTEM');
 
 
 --
@@ -98,15 +100,15 @@ GO
 
 BEGIN
 	CREATE TABLE [dbo].[Group](
-		[GroupId] [int] IDENTITY(1,1) NOT NULL,
-		[GroupKey] [nvarchar](50) DEFAULT NULL,	
-		[GroupName] [nvarchar](50) DEFAULT NULL,
-		[Description] [nvarchar](250) DEFAULT NULL,	
-		[Created] [datetime] DEFAULT CURRENT_TIMESTAMP,
-		[Updated] [datetime] DEFAULT CURRENT_TIMESTAMP,
-		[Author] [nvarchar](50) DEFAULT NULL,
-		[Editor] [nvarchar](50) DEFAULT NULL,
-		[Deleted] [int] DEFAULT 0
+		[GroupId] 		INT IDENTITY(1,1) NOT NULL,
+		[GroupKey] 		NVARCHAR(50) DEFAULT NULL,
+		[GroupName] 	NVARCHAR(50) DEFAULT NULL,
+		[Description] 	NVARCHAR(250) DEFAULT NULL,
+		[Created] 		DATETIME DEFAULT CURRENT_TIMESTAMP,
+		[Updated] 		DATETIME DEFAULT CURRENT_TIMESTAMP,
+		[Author] 		NVARCHAR(50) DEFAULT NULL,
+		[Editor] 		NVARCHAR(50) DEFAULT NULL,
+		[Deleted] 		INT DEFAULT 0
 	CONSTRAINT [PK_Group] PRIMARY KEY CLUSTERED 
 	(
 		[GroupId] ASC
@@ -153,18 +155,18 @@ GO
 
 BEGIN
 	CREATE TABLE [dbo].[GroupUser](
-		[GroupUserId] [int] IDENTITY(1,1) NOT NULL,
-		[GroupId] [int] NOT NULL,
-		[UserId] [int] NOT NULL,
-		[ModuleId] [int] NOT NULL,
-		[IsCreate] [int] DEFAULT 0,
-		[IsUpdate] [int] DEFAULT 0,
-		[IsDelete] [int] DEFAULT 0,
-		[IsDisplay] [int] DEFAULT 1,
-		[Created] [datetime] DEFAULT CURRENT_TIMESTAMP,
-		[Updated] [datetime] DEFAULT CURRENT_TIMESTAMP,
-		[Author] [nvarchar](50) NULL,
-		[Editor] [nvarchar](50) NULL
+		[GroupUserId] 	INT IDENTITY(1,1) NOT NULL,
+		[GroupId] 		INT NOT NULL,
+		[UserId] 		INT NOT NULL,
+		[ModuleId] 		INT NOT NULL,
+		[IsCreate] 		INT DEFAULT 0,
+		[IsUpdate] 		INT DEFAULT 0,
+		[IsDelete] 		INT DEFAULT 0,
+		[IsDisplay] 	INT DEFAULT 1,
+		[Created] 		DATETIME DEFAULT CURRENT_TIMESTAMP,
+		[Updated] 		DATETIME DEFAULT CURRENT_TIMESTAMP,
+		[Author] 		NVARCHAR(50) NULL,
+		[Editor] 		NVARCHAR(50) NULL
 	CONSTRAINT [PK_UserGroup] PRIMARY KEY CLUSTERED 
 	(
 		[GroupUserId] ASC

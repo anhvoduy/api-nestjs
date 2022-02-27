@@ -21,19 +21,19 @@ GO
 BEGIN
 	CREATE TABLE [dbo].[Anura_License](
 		[License_Id] bigint 		IDENTITY(1,1) NOT NULL,
-		[Application_Id] 	NVARCHAR(50) NOT NULL,
-		[Sample_Rest_Url] 	NVARCHAR(100) NOT NULL,
-		[Sample_Ws_Url] 	NVARCHAR(100) NOT NULL,
-		[Partner_Id]		NVARCHAR(20) NOT NULL,
-		[License_Key]		NVARCHAR(20) NOT NULL,
+		[Application_Id] 		NVARCHAR(50) NOT NULL,
+		[Sample_Rest_Url] 		NVARCHAR(100) NOT NULL,
+		[Sample_Ws_Url] 		NVARCHAR(100) NOT NULL,
+		[Partner_Id]			NVARCHAR(20) NOT NULL,
+		[License_Key]			NVARCHAR(20) NOT NULL,
 		[Study_Id]			NVARCHAR(20) NOT NULL,
 		[Org_Key]			NVARCHAR(20) NOT NULL,
-		[Visage_Key]		NVARCHAR(20) NOT NULL,		
+		[Visage_Key]			NVARCHAR(20) NOT NULL,		
 		
-		[Author] nvarchar(50) DEFAULT NULL,
-		[Created] [datetime] DEFAULT CURRENT_TIMESTAMP,
-		[Editor] nvarchar(50) DEFAULT NULL,
-		[Updated] [datetime] DEFAULT CURRENT_TIMESTAMP,
+		[Author] nvarchar(50) 		DEFAULT NULL,
+		[Created] [datetime] 		DEFAULT CURRENT_TIMESTAMP,
+		[Editor] nvarchar(50) 		DEFAULT NULL,
+		[Updated] [datetime] 		DEFAULT CURRENT_TIMESTAMP,
 		[Deleted] int DEFAULT 0
 	CONSTRAINT [PK_License_Id] PRIMARY KEY CLUSTERED 
 	(

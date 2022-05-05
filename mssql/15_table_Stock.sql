@@ -37,7 +37,10 @@ BEGIN
 		[StockDesc] 	NVARCHAR(250) NULL,
 		[Link] 			NVARCHAR(250) DEFAULT NULL,
 		[Active] 		INT DEFAULT 1,
-		
+		[Shares_Outstanding] DECIMAL(18,4) DEFAULT 0, 	-- Khối lượng cổ phiếu đang lưu hành
+		[Shares_Listed] DECIMAL(18,4) DEFAULT 0, 		-- Khối lượng cổ phiếu đang niêm yết
+		[Authorized_Capital] DECIMAL(18,4) DEFAULT 0, 	-- Vốn điều lệ
+
 		[Author] 		NVARCHAR(50) DEFAULT NULL,
 		[Created] 		[datetime] DEFAULT CURRENT_TIMESTAMP,
 		[Editor] 		NVARCHAR(50) DEFAULT NULL,
@@ -50,6 +53,7 @@ BEGIN
 END
 GO
 
+-- add stock
 INSERT INTO [dbo].[Stock] (StockNo, StockName, StockDesc, Link, Active,  Created, Author, Updated, Editor)
 VALUES ('ACB', N'Ngân hàng Thương mại Cổ phần Á Châu', '', 'https://finance.vietstock.vn/ACB-ngan-hang-tmcp-a-chau.htm', 1, GETDATE(), 'SYSTEM', GETDATE(), 'SYSTEM');
 
@@ -139,3 +143,36 @@ VALUES ('VPB', N'Ngân hàng TMCP Việt Nam Thịnh Vượng', '', '', 1, GETDA
 
 INSERT INTO [dbo].[Stock] (StockNo, StockName, StockDesc, Link, Active,  Created, Author, Updated, Editor)
 VALUES ('VRE', N'Công ty Cổ phần Vincom Retail', '', '', 1, GETDATE(), 'SYSTEM', GETDATE(), 'SYSTEM');
+
+-- update capital
+-- khối lượng: 	1.000 ck
+-- giá trị: 	1.000.000.000 = 1 tỷ đồng
+UPDATE [dbo].[Stock] 
+SET Shares_Outstanding 	= 2701948,
+	Shares_Listed 		= 2701948, 
+	Authorized_Capital 	= 27019
+WHERE StockNo = 'ACB'
+
+UPDATE [dbo].[Stock] 
+SET Shares_Outstanding 	= 5058524,
+	Shares_Listed 		= 5058524, 
+	Authorized_Capital 	= 50585
+WHERE StockNo = 'BID'
+
+UPDATE [dbo].[Stock] 
+SET Shares_Outstanding 	= 742323,
+	Shares_Listed 		= 742323, 
+	Authorized_Capital 	= 7423
+WHERE StockNo = 'BID'
+
+UPDATE [dbo].[Stock] 
+SET Shares_Outstanding 	= 907552,
+	Shares_Listed 		= 907552, 
+	Authorized_Capital 	= 9075
+WHERE StockNo = 'FPT'
+
+UPDATE [dbo].[Stock] 
+SET Shares_Outstanding 	= 1913950,
+	Shares_Listed 		= 1913950, 
+	Authorized_Capital 	= 19139
+WHERE StockNo = 'GAS'

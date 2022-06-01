@@ -20,28 +20,28 @@ GO
 
 BEGIN
 	CREATE TABLE [dbo].[Tag](
-		[TagId] 		INT IDENTITY(1,1) NOT NULL,
-		[TagName] 		NVARCHAR(50) NOT NULL
-	CONSTRAINT [PK_TagId] PRIMARY KEY CLUSTERED 
+		[Tag_Id] 		INT IDENTITY(1,1) NOT NULL,
+		[Tag_Name] 		NVARCHAR(50) NOT NULL
+	CONSTRAINT [PK_Tag_Id] PRIMARY KEY CLUSTERED 
 	(
-		[TagId] ASC
+		[Tag_Id] ASC
 	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 	) ON [PRIMARY]
 END
 GO
 
 -- add tag
-INSERT INTO [dbo].[Tag] (TagName)
+INSERT INTO [dbo].[Tag] (Tag_Name)
 VALUES (N'.Net');
 
-INSERT INTO [dbo].[Tag] (TagName)
+INSERT INTO [dbo].[Tag] (Tag_Name)
 VALUES (N'JQuery');
 
-INSERT INTO [dbo].[Tag] (TagName)
+INSERT INTO [dbo].[Tag] (Tag_Name)
 VALUES (N'KnockoutJs');
 
-INSERT INTO [dbo].[Tag] (TagName)
+INSERT INTO [dbo].[Tag] (Tag_Name)
 VALUES (N'AngularJs');
 
-INSERT INTO [dbo].[Tag] (TagName)
+INSERT INTO [dbo].[Tag] (Tag_Name)
 VALUES (N'NodeJs');

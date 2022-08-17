@@ -1,2 +1,2 @@
 # database
-- Microsoft SQL Server DB || SQL Azure DB
+- SQL Server 2019 DB || SQL Azure DB
